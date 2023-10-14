@@ -1,0 +1,46 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class AmazingHawaii {
+  + AmazingHawaii(PlanTuristico): 
+  + getCosto(): double
+  + getDescripcion(): String
+  + getDuracion(): int
+}
+class Laboratorio6 {
+  + Laboratorio6(): 
+  + cotizar(PlanTuristico): void
+  + main(String[]): void
+}
+class Nature {
+  + Nature(PlanTuristico): 
+  + getDescripcion(): String
+  + getCosto(): double
+  + getDuracion(): int
+}
+class PaqueteBase {
+  + PaqueteBase(): 
+  + getCosto(): double
+  + getDuracion(): int
+  + getDescripcion(): String
+}
+class PearlHarbor {
+  + PearlHarbor(PlanTuristico): 
+  + getDescripcion(): String
+  + getCosto(): double
+  + getDuracion(): int
+}
+interface PlanTuristico << interface >> {
+  + getCosto(): double
+  + getDuracion(): int
+  + getDescripcion(): String
+}
+
+AmazingHawaii  -[#008200,dashed]-^  PlanTuristico 
+Nature         -[#008200,dashed]-^  PlanTuristico 
+PaqueteBase    -[#008200,dashed]-^  PlanTuristico 
+PearlHarbor    -[#008200,dashed]-^  PlanTuristico 
+@enduml
